@@ -27,7 +27,7 @@ Methods Used
 * Cytoscape
 
 #System Requirements 
-* most of the current new OS will work
+* Most of the current new OS will work
 * Minimum RAM required 16GB
 
 Getting Started
