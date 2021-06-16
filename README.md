@@ -41,6 +41,8 @@ Methods Used
 * Dwnload a secondary expression data for MM samples and prep it before using this WGCNA code
 * Downloa the clinical data for the samples
 
-# Error "picksoftThreshold" re-install "WGCNA package using this code install.packages("BiocManager")
+# Error "picksoftThreshold" 
+re-install "WGCNA package using this code below
+install.packages("BiocManager")
 
 BiocManager::install("WGCNA")
