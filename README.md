@@ -1,5 +1,5 @@
 # MMRF-WGCNA-ANALYSIS
-This project focuses on 270 Multiple Myeloma patients who were diagnosed early and received standard treatment (RVD)
+This project focuses on understanding the molecular mechanism behind early multiple myeloma (MM)progression in newly diagnosed 270 Multiple Myeloma patients who were treated early with MM standard therapies: lenalidomide, bortezomide and dexamethasone (RVD).
 
 This project is with the assuption that you have cleaned your expression data; otherwise, this code did not cover data prep. 
 For data prep you will need another set of code for that purpose. 
@@ -12,8 +12,9 @@ The objectives of this project are:
 
 # Partners
 * Morehouse School of Medicine depatment of Microbiology, Biochemistry, and Immunology
-* Emory University depatment of --- and ---
-* Georgia Institute of Technology department of ---
+* Emory School of Medicine, Winship cancer institute, Clifton Road NE, Atlanta, GA.
+* Emory University School of Medicine, Center for Neurodegenerative Diseases, Atlanta, GA 30322, USA
+* Georgia Institute of Technology department of applied system engineering, Atlanta, GA.
 
 Methods Used
 * Inferential Statistics
