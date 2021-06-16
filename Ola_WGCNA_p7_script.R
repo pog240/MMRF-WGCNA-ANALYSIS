@@ -1,20 +1,16 @@
-setwd("D:/Anoval_Analysis")
+setwd("D:/Anoval_Analysis") # set your work directory to the folder where you saved your cleadData and numericMeta files
 #load("/Users/oadebayo/Documents/Olayinka_New_Analysis/saved.image.BM.noOutliers.lmm.regressedAgeSex_StageProtected21.Rdata")
 load("D:/Anoval_Analysis/ola_21Modules_april_22_21.RData")
-#traits<-read.csv("traits270x16_rvd.csv", header = TRUE, row.names = 1)
-#cleanDat<-read.csv("/Users/oadebayo/Documents/Olayinka_New_Analysis/cleadat35187x732.csv", header = TRUE, row.names = 1, check.names = FALSE)
-#numericMeta<-traits
-#head(cleanDat)
-#head(traits)
-dim(cleanDat)
-dim(numericMeta)
-rownames(traits)==colnames(cleanDat) #sanity check -- are sample names in same order?
+numericMeta<-read.csv("numericMeta_GitHub.csv", header = TRUE, row.names = 1) # read in your traits data
+cleanDat<-read.csv("cleanDate_GitHub.csv", header = TRUE, row.names = 1, check.names = FALSE) # read in your cleanData (expression) data
+dim(cleanDat) # check diamension of cleansat
+dim(numericMeta) # check diamension of numericMeta
+rownames(numericMeta)==colnames(cleanDat) #sanity check -- are sample names in same order?
 # If the sanity test is TRUE no need to run the nest line of code
 #cleanDat<-cleanDat[,na.omit(match(rownames(numericMeta),colnames(cleanDat)))] #cull to keep only samples we have traits for, and match the column (sample) order of cleanDat to the row order of numericMeta
 
 #numericMeta <- numericMeta[match(colnames(cleanDat),rownames(numericMeta)),] #use this line instead of above if you have more samples in your traits file than you do in abundance data; trait sample (row) order will be matched to column names of cleanDat; or use both lines if matching needs to be enforced due to different missing samples in both traits and abundance data
 #rownames(numericMeta)==colnames(cleanDat) #sanity check -- are sample names in same order?
-dim(cleanDat) # check diamension of cleansat
 ## Declare as outliers those samples which are more than sdout sd above the mean connectivity based on the chosen measure
 sdout=3
 install.packages("WGCNA")
@@ -43,14 +39,14 @@ library(cluster)
 library(boot)
 library("callr")
 
-#powers <- seq(2,12,by=1)
-#sft <- pickSoftThreshold(t(cleanDat),blockSize=nrow(cleanDat)+1000,   #always calculate power within a single block (blockSize > # of rows in cleanDat)
-                         #powerVector=powers,
-                         #corFnc="bicor",networkType="signed")
-#jpeg(file="oosavingsah_plottablesft12.jpeg")
-#tableSFT<-sft[[2]]
-#plot(tableSFT[,1],tableSFT[,2],xlab="Power (Beta)",ylab="SFT R?")
-#dev.off()
+powers <- seq(2,12,by=1)
+sft <- pickSoftThreshold(t(cleanDat),blockSize=nrow(cleanDat)+1000,   #always calculate power within a single block (blockSize > # of rows in cleanDat)
+                         powerVector=powers,
+                         corFnc="bicor",networkType="signed")
+jpeg(file="oosavingsah_plottablesft12.jpeg")
+tableSFT<-sft[[2]]
+plot(tableSFT[,1],tableSFT[,2],xlab="Power (Beta)",ylab="SFT R?")
+dev.off()
 
 #powers <- seq(6.5,20,by=0.5)
 #sft2 <- pickSoftThreshold(t(cleanDat),blockSize=nrow(cleanDat)+1000,   #always calculate power within a single block (blockSize > # of rows in cleanDat)
