@@ -4,7 +4,7 @@ This project focuses on understanding the molecular mechanism behind early multi
 This project is with the assuption that you have cleaned your expression data; otherwise, this code did not cover data prep. 
 For data prep you will need another set of code for that purpose. 
 
-#Project Ojective
+# Project Ojective
 The objectives of this research is to identify some of the molecular mechanism using:
 Weighted gene co-expression network analysis  (WGCNA) to determine co-expressed gene networks associated with clinical phenotypes of MM and disease progression.
 
@@ -33,10 +33,10 @@ Methods Used
 * ROC
 * Cytoscape
 
-#System Requirements 
+# System Requirements 
 * Most of the current new OS will work
 * Minimum RAM required 16GB
 
-Getting Started
+# Getting Started
 * Dwnload a secondary expression data for MM samples and prep it before using this WGCNA code
 * Downloa the clinical data for the samples
